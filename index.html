@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+
+    <link rel="stylesheet" href="static/css/chat.css">
+    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src='//www.aa.com/jquery.js'></script>
+    <script src="fuzzyset.js"></script>
+
+
+    <style>
+        #voice-input-btn {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 50%;
+        }
+  
+        #answer-box {
+          border: 1px solid black;
+          padding: 10px;
+          margin-top: 10px;
+        }
+      </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="ttu.jpg" id="ttuimg">
+    </div>
+    <div class="main">
+      
+    </div>
+    <div class="pstudent">
+        <h1 id="ptext">I AM A
+            PROSPECTIVE STUDENT</h1>
+    </div>
+    <div class="container img">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <img src="ttuim1.jpg" id="ttuim1">
+                    <div class="col">
+                        <h1>FIND MY<span></span> MAJOR</h1>
+                        <p>Ensure that your future spreads wings and had great future and success in your carrer with TTU.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <div class="row">
+                    <img src="ttuimg2.jpg" id="ttuim1">
+                    <div class="col">
+                        <h1>Financial Aid</h1>
+                        <p>Our goal is to make obtaining a college degree within reach by supporting you with financial aid and scholarships programs.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <br></br>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <img src="ttuimg3.jpg" id="ttuim1">
+                    <div class="col">
+                        <h1>Scedule a <span></span> Tour</h1>
+                        <p>The Visitors Center is located in West Hall just off the Broadway and University Ave. (main) entrance to campus. West Hall is the second building on the right.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <div class="row">
+                    <img src="ttuimg4.jpg" id="ttuim1">
+                    <div class="col">
+                        <h1>Apply Now</h1>
+                        <p>Once you've submitted your application for admission, pay the application fee or submit fee waiver documentation, and complete the SRAR.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <br></br>
+    <div class="footer">
+        <div class="row mx-auto">
+            <div class="col-md-4 col-sm-6">
+                <a class="navbar-brand" href="#"><img src="ttu.jpg" style="width: 100px" height="100px" routerLink="/"></a>
+               <h4> Texas Tech University</h4>
+               <h4> Lubbock, Texas 79415</h4>
+                <h4>(713) 743-2255</h4>
+              
+              </div>
+            <div class="col-md-2 mt-5 mb-3">
+              <h4>A–Z Index</h4>
+             <h4> Academic Calendar</h4>
+              <h4>Campus Carry Policy</h4>
+              <h4>Campus Map</h4>
+              <h4>Career Opportunities</h4>
+              <h4>Directory</h4>
+              <h4>Emergency Information</h4>
+             <h4> Get Help </h4>
+            </div>
+            <div class="col-md-2 col-sm-3 mt-5 ">
+              
+              <h4>Human Resources</h4>
+              <h4> Library</h4>
+                <h4> Mental Health Resources</h4>
+                  <h4> Fraud & Non-Compliance Hotline</h4>
+                    <h4>  Office of the President</h4>
+                      <h4> Parking</h4>
+                        <h4>Report Copyright Infringement</h4>
+            </div>
+            <div class="col-md-2 col-sm-3 mt-5 ">
+             
+              <h4> Discrimination and Sexual Misconduct Reporting and Awareness</h4>
+                <h4> Open Records/Public Information Act</h4>
+                  <h4> Texas Veterans Portal</h4>
+                    <h4>Tuition & Fees</h4>
+                      <h4>TTU System</h4>
+                        <h4>Virtual Tour</h4>
+            </div>
+            <div class="col-md-2 col-sm-3 mt-5 mb-3">
+              <i class="fa fa-facebook-official fa-lg"></i> 
+              <i class="fa fa-instagram fa-lg"></i> 
+              <i class="fa fa-twitter fa-lg"></i> 
+              <i class="fa fa-linkedin-square fa-lg"></i> 
+              <i class="fa fa-facebook"></i>
+            </div>
+        
+          </div>
+        </div>
+        <div class="footer2">
+          <div class="row mx-auto">
+            <div class="col-md-12">
+        <p>©2022 Texas Tech University. All rights reserved.<span style="color:#e3d519 ;">Report a problem with this page Texas</span>.<span style="color:#f2ebc2">gov Texas Homeland Security TRAIL Fraud Reporting Fraud & Non-Compliance Hotline Linking Notice Privacy Notice Open Records/Public Information Act Institutional Résumé Required Reports Electronic & Information Resources Accessibility Discrimination and Sexual Misconduct Reporting and Awareness University Policies</span></p>
+            </div>
+        
+          </div>
+
+   
+    </div>
+    <!-- CHAT BAR BLOCK -->
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">Chat with us!
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    
+                    <div class="chat-container">
+                      <h3>Welcome to Course Registeration Quries</h3>
+                        <!-- Messages -->
+                        <div id="chatbox">
+                          <h5 id="chat-timestamp"></h5>
+                          <p id="answer" class="botText"><span>Sample questions<br>1.What courses available for spring?<br>2.Course code for Intelligent Systems</span></p>
+                      </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="text-input" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <div class="row">
+                                <button id="voice-input-btn"><i class="fa fa-fw fa-microphone"></i></button>
+                                <i id="submit-btn" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <br></br>
+   
+
+
+    
+
+    <script>
+      
+      var isClose=true;
+        const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom","for","which","where"];
+        var editor = "sorts\n" +
+    
+    "   #people = {tommy, alex, john, daniel, sarah, peter, lino}.\n" +
+    "   #gender = {male, female}.\n" +
+    "   #courses = {intelligentsystems,aos,toa,crypto,aoa}.\n" +
+    "   #code = {cs5368,cs5381,cs6343}.\n" +
+    "   #semester = {fall,spring,alsem}.\n" +
+    "   #lastnames = {aToe,fToz}.\n" +
+    "   #location = {biobuilding, holdenhall}.\n" +
+    "   #day={mwf,tuethur}.\n" +
+    "   #time = {between_11AM_12PM,between_12PM_1PM,between_2PM_3PM,between_3PM_4PM,between_9AM_10AM}.\n" +
+       
+    "predicates\n" +
+    
+    "   courses(#courses,#semester).\n" +
+    "   advisor(#people,#lastnames).\n" +
+    "   meets(#courses,#location).\n" +
+    "   courseCode(#code,#courses).\n" +
+    "   courseTitle(#courses,#code).\n" +
+    "   courseTiming(#time, #courses).\n" +
+    "   courseDay(#day,#courses).\n" +
+    "   bothSemesters(#courses).\n" +
+    
+    
+    "rules\n"+
+    
+    "   advisor(tommy, aToe).\n" +
+    "   advisor(alex, fToz).\n" +
+    "   courses(intelligentsystems,spring).\n" +
+    "   courses(intelligentsystems,fall).\n" +
+    "   courses(aos,fall).\n" +
+    "   courses(aos,spring).\n" +
+    "   bothSemesters(X):- courses(X,fall), courses(X,spring).\n" +
+    "   courseCode(cs5381,aoa).\n" +
+    "   courseCode(cs5368,intelligentsystems).\n" +
+    "   courseTitle(X,Y):-  courseCode(Y,X) .\n" +
+    "   courseTiming(between_9AM_10AM,intelligentsystems).\n" +
+    "   courseDay(mwf,intelligentsystems).\n" +
+    "   meets(intelligentsystems,holdenhall).\n" +
+    "   meets(aoa,biobuilding).";
+    
+    
+    
+        // sorts
+        var contstring = editor.split("sorts\n")[1].split("predicates\n");
+        var sortstring = contstring[0].split('.');
+        sortstring.splice(-1, 1);
+        var sorts = {};
+        sortstring = sortstring.map(d => d.replace(/\n/g, '').trim()).forEach(d => {
+            var par = d.split("=");
+            sorts[par[0].replace(/#/, '').trim()] = par[1].replace(/{|}/g, '').split(',').map(w => w.trim())
+        });
+        // predicates
+        var predicates = {};
+        contstring = contstring[1].split("rules\n");
+        sortstring = contstring[0].split('.');
+        sortstring.splice(-1, 1);
+        sortstring.forEach(d => {
+            var part = d.replace(/\n/g, '').trim().split('(');
+            var func = part[0];
+            predicates[func] = {};
+            var par = part[1].split(',').map(e => e.replace(/#|\)/g, '').trim());
+            var par1 = sorts[par[0]].slice();
+            par1.push("X");
+            par.splice(0, 1);
+            par1.forEach(e => {
+                var strinh = (e == 'X' ? '' : (e + ' ')) + func;
+                predicates[func][strinh] = func + "(" + e + ")";
+                par.forEach(par2 => {
+                    var temp = sorts[par2].slice();
+                    temp.push("X");
+                    temp.forEach(t => {
+                        var strinh = (e == 'X' ? '' : (e + ' ')) + func + (t == 'X' ? '' : (' ' + t));
+                        // if (strinh != fubnc)
+                        predicates[func][strinh] = func + "(" + e + "," + t + ")";
+                    })
+                });
+            });
+        });
+
+
+        var all_predicates = [];
+        for (var key1 in predicates) {
+            if (predicates.hasOwnProperty(key1)) {
+                for (var key2 in predicates[key1]) {
+                    if (predicates[key1].hasOwnProperty(key2))
+                        all_predicates.push(key2);
+                }
+            }
+
+        }
+        all_predicates.push('speak spanish'); // extra terms
+        a = FuzzySet(all_predicates);
+      
+      console.log(all_predicates)
+      
+      
+      // Speech recognition API
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'en-US';
+
+      // Get DOM elements
+      const answerDiv = document.querySelector('#answer');
+      const voiceBtn = document.getElementById('voice-input-btn');
+      const textInput = document.getElementById('text-input');
+      const submitBtn = document.getElementById('submit-btn');
+      const answerBox = document.getElementById('answer-box');
+
+      submitBtn.addEventListener('click', () => {
+        const question = textInput.value;
+        if (question.trim() === '') {
+          answerBox.innerHTML = 'Please ask a question.';
+          return;
+        }
+        var trim_script = question.split(" ");
+        trim_script = trim_script.filter(f => !stopwords.includes(f));
+        var queryQues = a.get(trim_script.join(" "), null, 0.5); 
+        getAnswer(queryQues);
+        
+      });
+
+      // Handle speech recognition
+      recognition.onresult = event => {
+        const resultIndex = event.resultIndex;
+        const transcript = event.results[resultIndex][0].transcript;
+        textInput.value = transcript;
+        
+        var trim_script = transcript.split(" ");
+        trim_script = trim_script.filter(f => !stopwords.includes(f));
+        var queryQues = a.get(trim_script.join(" "), null, 0.5);
+        console.log(queryQues);
+        getAnswer(queryQues);
+      };
+
+      // Handle click on voice input button     
+      function startSpeechRecognition() {
+        recognition.start();
+      }
+      voiceBtn.addEventListener('click', startSpeechRecognition);
+
+
+      function getAnswer(question) {
+        
+        if (question!=null) {
+                var mainkey = question[0][1].replace('speak ','');
+                var answerarr = mainkey.split(' ');
+                var key1 = '';
+                answerarr.forEach(d => {
+                    key1 = (predicates[d] != undefined) ? d : key1;
+                });
+                //var key1 = answerarr.length>2? answerarr[1]:answerarr[0];
+                var key2 = mainkey;
+                console.log(key1 +'-'+ key2);
+                console.log(predicates[key1][key2]);
+                
+                var data = {
+                    'action': "getQuery",
+                    'query': predicates[key1][key2],
+                    'editor': editor
+                };
+          
+          console.log(data)
+          
+          
+          
+          $.ajax({
+          url: "https://cors-anywhere.herokuapp.com/http://wave.ttu.edu/ajax.php",
+          type: "POST",
+          headers: {
+            "X-Requested-With": "XMLHttpRequest"
+          },
+          data: {
+            action: "getQuery",
+            query: predicates[key1][key2],
+            editor: editor
+          },
+          success: function(response) {
+            console.log("from responce")
+            console.log(response);
+             const answer = response || 'Sorry, I could not find an answer.';
+             answerDiv.innerHTML = answer;
+             answerBox.innerHTML = answer;
+          },
+          error: function(xhr, status, error) {
+            console.log("error: " + error);
+          }
+        });
+
+
+
+          
+          //$.post("http://localhost/ajax.php", { url: "http://wave.ttu.edu/" , data:data}, function (response) {
+                // Expected response : answer sets
+                //$.post("http://localhost/ajax/ajax.js",  function (response) {
+                //$.post("http://localhost/ajaxtest.php", function (response) {  
+                 // $.post("https://cors-anywhere.herokuapp.com/http://wave.ttu.edu/", data, function (response) {
+                  
+                   // console.log(response);
+                  
+                  
+                   // var html = document.createElement("html");
+                   // html.innerHTML = response;
+                    // contentRan
+                   // var answerstring = html.querySelector("p").textContent.replace(/X =/gm, "");
+                  //  var answerarr = answerstring.split("\n");
+                  //  answerarr.splice(-1,1);
+                 //   console.log(answerarr);
+                 //   var pre_string = "The answer to your question " + transcript + " is ";
+                 //   answerstring = contentRan.answer[answerarr[0].toLowerCase().trim()]==undefined?
+                 //       (pre_string + (answerarr.length==1?answerstring:(answerarr.splice(-1, 0, "and"),answerarr.join())))
+                 //       : generaspeak(contentRan.answer[answerarr[0].toLowerCase().trim()]);
+                //    console.log(answerstring);
+                  
+                //   const answer = answerstring || 'Sorry, I could not find an answer.';
+               //   answerDiv.innerHTML = answer;
+               //   answerBox.innerHTML = answer;
+               //   console.log(answer);
+                    
+               // });
+            }
+        }
+        
+ 
+
+    </script>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="static/scripts/responses.js"></script>
+<script src="static/scripts/chat.js"></script>
+
+</html>
