@@ -231,23 +231,24 @@
         const stopwords = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom","for","which","where"];
         var editor = "sorts\n" +
     
-    "   #people = {tommy, alex, john, daniel, sarah, peter, lino,zhang,tommy,yao,abdul}.\n" +
+    "   #people = {tommy, alex, john, daniel, sarah, peter, lino}.\n" +
+    "   #gender = {male, female}.\n" +
     "   #courses = {intelligentsystems,aos,toa,crypto,aoa}.\n" +
     "   #code = {cs5368,cs5381,cs6343}.\n" +
-    "   #semester = {fall,spring,alSem}.\n" +
-    "   #lastnames = {aToe,fTop, qToz}.\n" +
+    "   #semester = {fall,spring,alsem}.\n" +
+    "   #lastnames = {aToe,fToz}.\n" +
     "   #location = {biobuilding, holdenhall}.\n" +
-    "   #time = {mwf_between_11AM_12PM,mwf_between_3PM_4PM,mwf_between_4PM_5PM,tuethur_between_9AM_11AM,tuethur_between_6PM_8PM}.\n" +
+    "   #day={mwf,tuethur}.\n" +
+    "   #time = {between_11AM_12PM,between_12PM_1PM,between_2PM_3PM,between_3PM_4PM,between_9AM_10AM}.\n" +
        
     "predicates\n" +
     
     "   courses(#courses,#semester).\n" +
     "   advisor(#people,#lastnames).\n" +
-    "   instructor(#people,#courses).\n" +
     "   meets(#courses,#location).\n" +
     "   courseCode(#code,#courses).\n" +
     "   courseTitle(#courses,#code).\n" +
-    "   courseSchedule(#time, #courses).\n" +
+    "   courseTiming(#time, #courses).\n" +
     "   courseDay(#day,#courses).\n" +
     "   bothSemesters(#courses).\n" +
     
@@ -255,18 +256,17 @@
     "rules\n"+
     
     "   advisor(tommy, aToe).\n" +
-    "   advisor(alex, fTop).\n" +
-    "   advisor(alex, qToz).\n" +
+    "   advisor(alex, fToz).\n" +
     "   courses(intelligentsystems,spring).\n" +
     "   courses(intelligentsystems,fall).\n" +
     "   courses(aos,fall).\n" +
     "   courses(aos,spring).\n" +
-    "   instructor(zhang,intelligentsystems).\n" +
     "   bothSemesters(X):- courses(X,fall), courses(X,spring).\n" +
     "   courseCode(cs5381,aoa).\n" +
     "   courseCode(cs5368,intelligentsystems).\n" +
     "   courseTitle(X,Y):-  courseCode(Y,X) .\n" +
-    "   courseSchedule(mwf_between_4PM_5PM,intelligentsystems).\n" +
+    "   courseTiming(between_9AM_10AM,intelligentsystems).\n" +
+    "   courseDay(mwf,intelligentsystems).\n" +
     "   meets(intelligentsystems,holdenhall).\n" +
     "   meets(aoa,biobuilding).";
     
